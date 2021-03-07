@@ -1,0 +1,24 @@
+{
+  "name": "whipapp",
+  "version": "0.0.0",
+  "description": "A script to quickly whip up a web application boilerplate",
+  "main": "src/index.js",
+  "scripts": {},
+  "bin": {
+    "whipapp": "./src/index.js"
+  },
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/podlomar/whipapp.git"
+  },
+  "author": "Martin Podloucký",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/podlomar/whipapp/issues"
+  },
+  "homepage": "https://github.com/podlomar/whipapp#readme",
+  "dependencies": {
+    "walkdir": "^0.4.1"
+  }
+}
