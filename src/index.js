@@ -32,5 +32,10 @@ function copyDir(dir, dest) {
 const appName = process.argv[2];
 const appDir = path.resolve(appName);
 
-fs.mkdirSync(appDir);
+console.log(`Generating app into ${appDir}`);
+
+if (appName !== '.') {
+  fs.mkdirSync(appDir);
+}
+
 copyDir(path.resolve(__dirname, '../files'), appDir);
