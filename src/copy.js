@@ -20,8 +20,6 @@ function walkCopy(src, destDir) {
       destDir, path.relative(srcDir, strippedPath),
     );
 
-    console.log('destPath', destPath);
-
     if (stat.isDirectory()) {
       fs.mkdirSync(destPath);
       return;
