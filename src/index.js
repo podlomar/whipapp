@@ -30,12 +30,19 @@ function copyDir(dir, dest) {
 }
 
 const appName = process.argv[2];
-const appDir = path.resolve(appName);
+const appPath = path.resolve(appName);
+const kitName = process.argv[3] || 'plain';
+const kitPath = path.resolve(__dirname, `../kits/${kitName}`);
 
-console.log(`Generating app into ${appDir}`);
-
-if (appName !== '.') {
-  fs.mkdirSync(appDir);
+if (!fs.existsSync(kitPath)) {
+  console.error(`Error: No such kit: ${kitName}`);
+  process.exit(1);
 }
 
-copyDir(path.resolve(__dirname, '../files'), appDir);
+console.log(`Generating ${kitName} app into ${appPath}`);
+
+if (appName !== '.') {
+  fs.mkdirSync(appPath);
+}
+
+copyDir(kitPath, appPath);
