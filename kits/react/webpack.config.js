@@ -4,6 +4,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: './src/index.jsx',
+  devtool: 'eval-source-map',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -50,6 +51,7 @@ module.exports = {
       patterns: [
         { from: 'src/assets', to: 'assets', noErrorOnMissing: true },
         { from: 'src/index.html', to: '' },
+        { from: 'src/favicon.ico', to: '' },
       ],
     }),
   ],

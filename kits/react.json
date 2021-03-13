@@ -1,0 +1,5 @@
+[
+  { "from": "kits/react", "to": ""},
+  { "from": "kits-common/img/rocket.svg", "to": "src/img" },
+  { "from": "kits-common/img/favicon.ico", "to": "src" }
+]
