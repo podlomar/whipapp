@@ -2,26 +2,15 @@
 
 'use strict';
 
-const fs = require('fs');
 const path = require('path');
-const copy = require('./copy');
+const {fetchKitPlan, initAppFolder, generateApp } = require('whipapp-core');
 
 const appName = process.argv[2];
-const appPath = path.resolve(appName);
-const kitName = process.argv[3] || 'plain';
-const kitPlanFile = path.resolve(__dirname, `../kits/${kitName}.json`);
+const rootDir = path.resolve('.');
+const kitName = process.argv[3];
 
-if (!fs.existsSync(kitPlanFile)) {
-  console.error(`Error: No such kit: ${kitName}`);
-  process.exit(1);
-}
-
-const kitPlan = JSON.parse(fs.readFileSync(kitPlanFile));
-
-console.log(`Generating ${kitName} app into ${appPath}`);
-
-if (appName !== '.') {
-  fs.mkdirSync(appPath);
-}
-
-copy(kitPlan, appPath);
+(async () => {
+  const kitPlan = await fetchKitPlan(kitName);
+  const { appRoot } = initAppFolder(rootDir, appName);
+  await generateApp(appRoot, kitPlan);
+})();

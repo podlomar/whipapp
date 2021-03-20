@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/podlomar/whipapp#readme",
   "dependencies": {
-    "walkdir": "^0.4.1"
+    "axios": "^0.21.1",
+    "walkdir": "^0.4.1",
+    "whipapp-core": "0.0.2"
   }
 }

@@ -1,4 +1,0 @@
-[
-  { "from": "kits/plain", "to": "."},
-  { "from": "kits-common/img/favicon.ico", "to": "." }
-]
