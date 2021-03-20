@@ -21,6 +21,6 @@
   "dependencies": {
     "axios": "^0.21.1",
     "walkdir": "^0.4.1",
-    "whipapp-core": "0.0.2"
+    "whipapp-core": "0.0.3"
   }
 }
